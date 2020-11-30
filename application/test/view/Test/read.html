@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+</head>
+<body>
+<h3>商品详情</h3>
+<form action="{:url('Test/cart')}">
+    <table class="table">
+        <tr>
+            <td><input type="hidden" name="goods_id" value="{$vo.id}"></td>
+    <td><img src="__STATIC__/{$vo.pic}" alt="" style="height: 100px;width: 80px"></td>
+    <td>{$vo.goods_name}</td>
+    <td>{$vo.attr}</td>
+    <td>{$vo.price}</td>
+    <td>数量<input type="number" name="number"></td>
+        </tr>
+    </table>
+    <input type="submit" value="添加入购物车">
+</form>
+</body>
+</html>

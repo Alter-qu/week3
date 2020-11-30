@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+</head>
+<body>
+<div>
+    {if empty($name)}
+    <h3><a href="{:url('Test/index')}">登录</a></h3>
+    {else/}
+    <h3>欢迎你{$name}</h3>
+    {/if}
+
+    <table class="table">
+        <tr>
+            <td>图片</td>
+            <td>商品</td>
+            <td>属性</td>
+            <td>单价</td>
+
+            <td>添加到购物车</td>
+
+        </tr>
+        {volist name="list" id="vo"}
+        <tr>
+            <td><img src="__STATIC__/{$vo.pic}" alt="" style="height: 100px;width: 80px"></td>
+            <td>{$vo.goods_name}</td>
+            <td>{$vo.attr}</td>
+            <td>{$vo.price}</td>
+            <td>
+                <a href="{:url('Test/read',['goods_id'=>$vo.id])}">查看</a>
+            </td>
+        </tr>
+        {/volist}
+    </table>
+
+</div>
+</body>
+</html>
